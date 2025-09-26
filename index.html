@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Attendance System 🚀</h1>
+        
+        <details class="session-details-container">
+            <summary>Session Details ▼</summary>
+            <div class="session-form">
+                <fieldset id="session-controls">
+                    <div class="form-group">
+                        <label for="session-date">Date:</label>
+                        <input type="date" id="session-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="session-class">Class:</label>
+                        <select id="session-class">
+                            <option>II-I IT-B</option>
+                            <option>II-II IT-B</option>
+                            <option selected>III-I IT-B</option>
+                            <option>III-II IT-B</option>
+                            <option>IV-I IT-B</option>
+                            <option>IV-II IT-B</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="session-subject">Subject:</label>
+                        <select id="session-subject">
+                            <option value="" disabled selected>Select Subject</option>
+                            <option>CN</option>
+                            <option>FDT</option>
+                            <option>CDI</option>
+                            <option>DWDM</option>
+                            <option>CNOS Lab</option>
+                            <option>DMWT Lab</option>
+                            <option>HCI</option>
+                            <option>PPL</option>
+                            <option>WT</option>
+                            <option>Library</option>
+                            <option>T&P</option>
+                            <option>SPORTS</option>
+                        </select>
+                    </div>
+                    <div class="form-group-full">
+                        <label>Hours (Max 3):</label>
+                        <div class="hours-checkbox-group">
+                            <span><input type="checkbox" name="session-hour" value="I"> I</span>
+                            <span><input type="checkbox" name="session-hour" value="II"> II</span>
+                            <span><input type="checkbox" name="session-hour" value="III"> III</span>
+                            <span><input type="checkbox" name="session-hour" value="IV"> IV</span>
+                            <span><input type="checkbox" name="session-hour" value="V"> V</span>
+                            <span><input type="checkbox" name="session-hour" value="VI"> VI</span>
+                            <span><input type="checkbox" name="session-hour" value="VII"> VII</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </details>
+
+        <div class="header-info" id="session-display">
+            </div>
+
+        <div class="view-switcher">
+            <button id="table-view-btn" class="view-btn">Table</button>
+            <button id="card-view-btn" class="view-btn">Cards</button>
+            <button id="grid-view-btn" class="view-btn active">Grid</button>
+        </div>
+        
+        <div class="controls">
+            <button id="mark-all-btn" class="action-btn">Mark All Present</button>
+        </div>
+
+        <div id="table-container" class="hidden">
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Roll Number</th>
+                        <th>Mark Present</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        
+        <div id="card-container" class="hidden">
+            </div>
+
+        <div id="grid-container">
+            </div>
+
+        <div class="submission-area">
+            <button id="show-popup-btn" title="Show Attendance Summary">Show Attendance</button>
+            <div id="summary"></div>
+        </div>
+    </div>
+
+    <div id="attendance-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <h2 id="modal-title">Attendance Summary</h2>
+            <div class="modal-lists">
+                <div class="list-container">
+                    <h3>Present Students</h3>
+                    <div class="textarea-container">
+                        <textarea id="present-list" readonly></textarea>
+                        <button class="copy-btn" data-target="present-list" title="Copy Present List">📋</button>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <h3>Absent Students</h3>
+                    <div class="textarea-container">
+                        <textarea id="absent-list" readonly></textarea>
+                        <button class="copy-btn" data-target="absent-list" title="Copy Absent List">📋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="studentlist.js"></script> 
+    <script src="script.js"></script>
+
+</body>
+</html>

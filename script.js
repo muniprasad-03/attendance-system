@@ -180,8 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const formatRollNumbersForDisplay = (studentList) => {
-        const regularStudents = studentList.filter(s => s.roll.startsWith('23211A12')).map(s => s.roll.slice(-2));
-        const lateralEntryStudents = studentList.filter(s => s.roll.startsWith('24215A12')).map(s => s.roll.slice(-2));
+        const regularStudents = studentList.filter(s => s.roll.startsWith('1223211A')).map(s => s.roll.slice(-2));
+        const lateralEntryStudents = studentList.filter(s => s.roll.startsWith('1224215')).map(s => s.roll.slice(-2));
         let outputParts = [];
         if (regularStudents.length > 0) outputParts.push(regularStudents.join(', '));
         if (lateralEntryStudents.length > 0) outputParts.push(`\nLE- ${lateralEntryStudents.join(', ')}`);

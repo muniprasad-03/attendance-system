@@ -500,3 +500,12 @@ h1 {
     /* Responsive Modal and View Switcher */
     .view-switcher { flex-wrap: wrap; }
 }
+
+/* in style.css */
+
+/* Style for the disabled session controls */
+#session-controls:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents any clicks within the disabled area */
+}
